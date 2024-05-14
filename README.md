@@ -16,6 +16,6 @@
 <hr>
 <h1>Unit Testing</h1>
 <br>
-<p>Run <code>ng test</code></p>
+<p> For unit testing Run <code>ng test</code></p>
 
 
