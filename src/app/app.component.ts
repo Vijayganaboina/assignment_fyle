@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
   fetchDataFromApi() {
     
     if (this.username.trim() === '') {
-      console.error("Username is required");
+      //console.error("Username is required");
       return;
     }
     
@@ -43,14 +43,14 @@ export class AppComponent implements OnInit{
     this.apiService.getUser(url).pipe(
       catchError(error => {
         if (error.status === 404) {
-          console.error('User not found:', error);
+          //console.error('User not found:', error);
           this.username='';
       }
       return "error";
     }
     )) .subscribe((response) => {
       this.userDetails = response;
-      console.log(this.userDetails);      
+      //console.log(this.userDetails);      
     }
     );
   }
