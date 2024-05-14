@@ -24,6 +24,7 @@ export class AppComponent implements OnInit{
   fetchDataFromApi() {
     
     if (this.username.trim() === '') {
+      console.error("Username is required");
       return;
     }
     
