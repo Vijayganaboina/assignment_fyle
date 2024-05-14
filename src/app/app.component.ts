@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
 import { catchError, map } from 'rxjs/operators';
@@ -45,7 +46,7 @@ export class AppComponent implements OnInit{
           console.error('User not found:', error);
           this.username='';
       }
-      return throwError(error);
+      return "error";
     }
     )) .subscribe((response) => {
       this.userDetails = response;
