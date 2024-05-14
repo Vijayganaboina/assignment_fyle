@@ -12,10 +12,10 @@
 <hr>
 <h1>Development server</h1>
 <br>
-<p>Run <code>ng serve</code> for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.</p>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <a>http://localhost:4200/</a>. The app will automatically reload if you change any of the source files.</p>
 <hr>
 <h1>Unit Testing</h1>
 <br>
-<p>Run <code>ng test</code></p>
+<p> For unit testing Run <code>ng test</code></p>
 
 
