@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
+import { catchError, map } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-root',
@@ -35,10 +39,19 @@ export class AppComponent implements OnInit{
   // Fetch user details
   private fetchUserDetails() {
     const url = `users/${this.username}`;
-    this.apiService.getUser(url).subscribe((response) => {
+    this.apiService.getUser(url).pipe(
+      catchError(error => {
+        if (error.status === 404) {
+          console.error('User not found:', error);
+          this.username='';
+      }
+      return throwError(error);
+    }
+    )) .subscribe((response) => {
       this.userDetails = response;
-      
-    });
+      console.log(this.userDetails);      
+    }
+    );
   }
 
   // Fetch user repositories
@@ -66,4 +79,5 @@ export class AppComponent implements OnInit{
     });
     
   }
+  
 }
